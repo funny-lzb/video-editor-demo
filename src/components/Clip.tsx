@@ -29,16 +29,16 @@ export const Clip: React.FC<ClipProps> = ({
     setIsDragging(false);
   };
 
-  const handleDrag: RndDragCallback = (e, d) => {
+  const handleDrag: RndDragCallback = (_e, d) => {
     positionRef.current = { x: d.x, y: 0 };
   };
 
-  const handleDragStop: RndDragCallback = (e, d) => {
+  const handleDragStop: RndDragCallback = (_e, d) => {
     handleMouseUp();
     onDragStop(id, d.x);
   };
 
-  const handleResizeStop: RndResizeCallback = (e, direction, ref) => {
+  const handleResizeStop: RndResizeCallback = (_e, _direction, ref) => {
     handleMouseUp();
     onResizeStop(id, parseFloat(ref.style.width));
   };
